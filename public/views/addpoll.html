@@ -1,0 +1,29 @@
+<section class="addpoll-container" ng-init="">
+  <form name="addpollForm" novalidate ng-submit="addpollForm.$valid && addpoll($event)">
+
+    <h4 class="poll-heading">Add a new poll</h4>
+    <div class="form-group">
+      <label class="poll-name-label">Name your poll</label>
+      <input class="form-control" id="poll-name" type="text" name="pollname" value="" ng-model="pollname" autofocus required>
+      <label class="error" ng-show="addpollForm.$submitted && addpollForm.pollname.$invalid" id="enter-pollname">Poll name required</label>
+    </div>
+    <label class="poll-opt-label">Add options</label>
+    <section id="poll-options">
+      <div class="form-group" id="poll-option-div-1">
+        <input class="opt-input form-control" id="poll-option-1" name="polloptInput" ng-model="ng1" type="text" placeholder="" required>
+        <button delete-opt type="button" class="btn btn-danger opt-delete" id="1">X</button>
+      </div>
+      <div class="form-group" id="poll-option-div-2">
+        <input class="opt-input form-control" id="poll-option-2" name="polloptInput" ng-model="ng2" type="text" placeholder="" required>
+        <button delete-opt type="button" class="btn btn-danger opt-delete" id="2">X</button>
+      </div>
+    </section>
+    <label class="error" ng-show="emptyOpt()" id="empty-opt">Empty options are not allowed</label>
+    <label class="error" ng-show="duplicateOpt()" id="duplicate-opt">Duplicate option names not allowed</label>
+    <label class="error" ng-show="mintwoOpt();" id="two-opt">Two or more options required</label>
+    <div class="addpoll-btn">
+      <button type="button" class="add-opt btn btn-default btn-md" add-opt id="add-options">Add more options</button>
+      <input class="poll-submit btn btn-success btn-lg" id="add-poll" type="submit" ng-click="init()" name="add-poll" value="Add poll">
+    </div>
+  </form>
+</section>

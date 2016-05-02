@@ -1,0 +1,16 @@
+<section class="user-form sign-up">
+  <h4 class="poll-heading">Sign up</h4>
+  <form name="signupForm" novalidate ng-submit="signupForm.$valid && store($event)">
+    <input class="form-control" id="username-id" type="text" name="username" value="" ng-model="username" autofocus placeholder="Username" required>
+    <label class="error" ng-show="signupForm.$submitted && signupForm.username.$invalid">Enter Username</label>
+    <label class="error" ng-show="userExist" id="user-exist">Username already exists</label>
+    <input class="form-control" id="email-id" type="email" name="email" value="" ng-model="email" placeholder="Email" required>
+    <label ng-show="signupForm.$submitted && signupForm.email.$invalid" class="error" id="enter-email">Enter a valid email</label>
+    <label class="error" ng-show="emailExist" id="email-exist">Email already exists</label>
+    <input class="form-control" id="password-id" type="password" name="password" value="" ng-model="password" placeholder="Password" required>
+    <label ng-show="signupForm.$submitted && signupForm.password.$invalid" class="error" id="enter-password">Enter Password</label>
+    <div class="submit-div">
+      <input class="btn btn-success btn-lg" id="signup-btn" type="submit" ng-click="userExist=false;emailExist=false" name="submit" value="Submit">
+    </div>
+  </form>
+</section>

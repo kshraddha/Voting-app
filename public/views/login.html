@@ -1,0 +1,14 @@
+<section class="user-form login form-content">
+  <h4 class="poll-heading">Login</h4>
+  <form name="loginForm" novalidate ng-submit="loginForm.$valid && check($event)">
+    <input class="form-control" id="username-id" type="text" name="username" ng-model="username" value="" autofocus placeholder="Username" required>
+    <label class="error" ng-show="loginForm.$submitted && loginForm.username.$invalid">Enter Username</label>
+    <label class="error" ng-show="userNotfound" id="user-exist">Username not found</label>
+    <input class="form-control" id="password-id" type="password" name="password" ng-model="password" value="" placeholder="Password" required>
+    <label class="error" ng-show="loginForm.$submitted && loginForm.password.$invalid" id="enter-password">Enter Password</label>
+    <label ng-show="incorrectPassword" class="error" id="incorrect-password">Incorrect Password</label>
+    <div class="submit-div">
+      <input class="btn btn-lg btn-success" id="login-btn" type="submit" ng-click="userNotfound=false;incorrectPassword=false" name="submit" value="Login">
+    </div>
+  </form>
+</section>
