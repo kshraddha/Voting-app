@@ -73,14 +73,12 @@ app.controller('detailController', function ($scope, $http, $compile) {
         url: '/findUserVote',
         data: userVoteInfo
       }).then(function (resp) {
+        console.log(resp.data);
         if (resp.data !== null) {
           $('#vote-submit').attr('disabled', 'true');
           $('#one-vote').css('display', 'block');
         }
       });
-    } else {
-      $('#vote-submit').attr('disabled', 'true');
-      $('#signup-vote').css('display', 'block');
     }
   }
   findUserVote();
@@ -112,14 +110,15 @@ app.controller('detailController', function ($scope, $http, $compile) {
                 break;
               }
             }
-
-            $http({
-              method: 'POST',
-              url: '/userVoted',
-              data: userVoteInfo
-            }).then(function (resp) {
-              findUserVote();
-            });
+            if ('curruser' in localStorage) {
+              $http({
+                method: 'POST',
+                url: '/userVoted',
+                data: userVoteInfo
+              }).then(function (resp) {
+                findUserVote();
+              });
+            }
 
             $('.poll-option:checked').attr('checked', false);
             myChart.data.datasets[0].data[index] = countInc;

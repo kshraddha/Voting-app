@@ -9,7 +9,7 @@ var userVoteSchema = new Schema({
 
 // the schema is useless so far
 // we need to create a model using it
-var userVote1 = mongoose.model('userVote', userVoteSchema);
+var user_vote = mongoose.model('user_vote', userVoteSchema);
 
 // make this available to our users in our Node applications
-module.exports = userVote1;
+module.exports = user_vote;

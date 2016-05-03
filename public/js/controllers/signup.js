@@ -17,6 +17,7 @@ angular.module('signup', []).controller('signupController', function ($scope, $h
       url: '/signup/validate',
       data: userExist
     }).then(function (res) {
+      $scope.signupForm.$submitted = false;
       if (res.data === null) {
         $http({
           method: 'POST',

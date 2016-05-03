@@ -93,10 +93,9 @@ h4 {
   color: red;
   font-size: 14px;
   font-weight: 400;
-  /*  display: none;*/
+  display: block;
 }
 
-#signup-vote,
 #one-vote {
   display: none;
   font-size: 14px;

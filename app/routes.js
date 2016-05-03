@@ -52,7 +52,6 @@ module.exports = function (app) {
       pollOptions: req.body.pollOptions
     });
     pollsInfo.save(function (err) {
-      console.log('res');
       res.send(
         (err === null) ? {
           msg: ''
@@ -141,7 +140,6 @@ module.exports = function (app) {
   });
 
   app.post('/findUserVote', function (req, res) {
-    console.log(req.body);
     userVote.findOne({
       pollId: req.body.pollId,
       username: req.body.username

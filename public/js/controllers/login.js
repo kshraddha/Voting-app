@@ -14,6 +14,7 @@ angular.module('login', []).controller('loginController', function ($scope, $htt
       url: '/login',
       data: userinfo
     }).then(function (response) {
+      $scope.loginForm.$submitted = false;
       if (response.data === null) {
         $scope.userNotfound = true;;
       } else if (response.data.password !== $scope.password) {

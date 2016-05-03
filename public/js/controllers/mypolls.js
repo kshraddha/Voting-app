@@ -17,7 +17,7 @@ app.directive("getMyPolls", function ($compile, $http) {
         data: userobj
       }).then(function (response) {
         for (i = 0; i < response.data.length; i++) {
-          $(element).append('<li class="list-group-item" id="li' + response.data[i]._id + '"><a href="polldetails?pollid=' + response.data[i]._id + '" class="poll-option">' + response.data[i].pollName + '</a><button type="button" class="btn btn-xs btn-danger delete-opt-btn" delete-poll id="' + response.data[i]._id + '">X</button></li>');
+          $(element).append('<li class="list-group-item" id="li' + response.data[i]._id + '"><a href="polldetails?' + response.data[i]._id + '" class="poll-option">' + response.data[i].pollName + '</a><button type="button" class="btn btn-xs btn-danger delete-opt-btn" delete-poll id="' + response.data[i]._id + '">X</button></li>');
         }
         $compile(element.contents())(scope);
       });
