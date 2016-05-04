@@ -2,6 +2,60 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+.page-wrap {
+  min-height: 100vh;
+  margin-bottom: -65px;
+}
+
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+
+footer,
+.page-wrap:after {
+  height: 65px
+}
+
+footer {
+  border-top: 1px solid gainsboro;
+  font-size: 14px;
+}
+
+.email {
+  background-image: url("../images/email-14-32.gif");
+}
+
+.git {
+  background-image: url("../images/github-10-32.gif");
+}
+
+.lin {
+  background-image: url(../images/linkedin-5-32.gif);
+}
+
+footer ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+footer div {
+  text-align: center;
+  padding: 10px;
+}
+
+footer ul li {
+  display: inline-block;
+  margin: 5px;
+}
+
+.social-icon {
+  height: 32px;
+  width: 32px;
+  display: block;
+}
+
 a {
   text-decoration: none;
 }
