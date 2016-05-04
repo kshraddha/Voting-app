@@ -69,6 +69,8 @@ app.controller('addpollController', function ($scope, $http) {
           dupOptions = true;
           return true;
           break;
+        } else {
+          return false;
         }
       }
     }
