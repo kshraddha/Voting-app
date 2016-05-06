@@ -64,13 +64,12 @@ app.controller('addpollController', function ($scope, $http) {
         inputArray[i] = $('#poll-option-' + (i + 1) + '').val();
       }
       inputArray.sort();
+
       for (i = 0; i < inputArray.length; i++) {
         if (inputArray[i] !== '' && inputArray[i] === inputArray[i + 1]) {
           dupOptions = true;
           return true;
           break;
-        } else {
-          return false;
         }
       }
     }
